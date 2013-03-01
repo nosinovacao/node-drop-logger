@@ -7,10 +7,10 @@ Usage:
 ```javascript
 
 var logger = new loggingModule({
-	useConsole: true,							//
-	useFile: true,								//
-	filePath: 'FTPProxy-Logging(%DATE%).log', 	//string
-	level: 'DEBUG'								//[EMERGENCY|ALERT|CRITICAL|ERROR|WARNING|NOTICE|INFO|DEBUG]
+	useConsole: true,							// boolean: true|false
+	useFile: true,								// boolean: true|false
+	filePath: 'FTPProxy-Logging(%DATE%).log', 	// string
+	level: 'DEBUG'								// [EMERGENCY|ALERT|CRITICAL|ERROR|WARNING|NOTICE|INFO|DEBUG]
 });
 
 logger.log('INFO', 'some text');
