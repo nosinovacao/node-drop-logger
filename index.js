@@ -39,7 +39,18 @@ var NodeLogger = function (options) {
         },
         'getFileName': function (date)
         {
-            return _p.filePath.replace('%DATE%', date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate());
+            var dateString = _p.stringLeftPad(date.getFullYear(), 4, '0') + "-" + _p.stringLeftPad((1 + date.getMonth()), 2, '0') + "-" + _p.stringLeftPad(date.getDate(), 2, '0');
+            return _p.filePath.replace('%DATE%', dateString);
+        },
+        'stringLeftPad': function (text, size, character) {
+            var s = text + '';
+            while (s.length < size) s = character + s;
+            return s;
+        },
+        'stringRightPad': function (text, size, character) {
+            var s = text + '';
+            while (s.length < size) s = s + character;
+            return s;
         }
     };
     var self = {
@@ -67,19 +78,22 @@ var NodeLogger = function (options) {
                 var i = 1;
                 
                 var now = new Date();
-                var dateStr = now.getFullYear() + "-" + (1 + now.getMonth()) + "-" + now.getDate() + " " +
-                                      now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                msg = '[' + dateStr + ']' + ' ' + levelStr + ' ' + msg; 
+                var dateString = _p.stringLeftPad(now.getFullYear(), 4, '0') + "-" + _p.stringLeftPad((1 + now.getMonth()), 2, '0') + "-" + _p.stringLeftPad(now.getDate(), 2, '0');
+                var timeString = _p.stringLeftPad(now.getHours(), 2, '0') + ":" + _p.stringLeftPad(now.getMinutes(), 2, '0') + ":" + _p.stringLeftPad(now.getSeconds(), 2, '0');
+                var dateStr = dateString + ' ' + timeString;
+                var levelString = _p.stringRightPad(levelStr, ('EMERGENCY').length, ' ');
+                var fileMsg = '[' + dateStr + ']' + ' ' + levelString + ' ' + msg; 
                 if (_p.useConsole) {
+                    var read = '\u001b[31m', yellow = '\u001b[33m', cyan = '\u001b[36m', magenta = '\u001b[35m', green = '\u001b[32m', reset = '\u001b[0m';
                     switch (levelStr) {
-                        case 'ERROR': console.error(msg); break;
-                        case 'WARNING': console.warn(msg); break;
-                        case 'INFO': console.info(msg); break;
-                        case 'DEBUG': console.log(msg); break;
-                        default: console.log(msg); break;
+                        case 'ERROR': console.error('[' + dateStr + ']' + ' ' + red + levelString + ' ' + reset + msg); break;
+                        case 'WARNING': console.warn('[' + dateStr + ']' + ' ' + yellow + levelString + ' ' + reset + msg); break;
+                        case 'INFO': console.info('[' + dateStr + ']' + ' ' + cyan + levelString + ' ' + reset + msg); break;
+                        case 'DEBUG': console.log('[' + dateStr + ']' + ' ' + levelString + ' ' + msg); break;
+                        default: console.log('[' + dateStr + ']' + ' ' + green + levelString + ' ' + reset + msg); break;
                     }
                 }
-                if (_p.useFile) { _p.stream.write(msg + '\r\n'); }
+                if (_p.useFile) { _p.stream.write(fileMsg + '\r\n'); }
                 if (isError) console.trace("Trace follows");
             }
         },
