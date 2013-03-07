@@ -1,0 +1,23 @@
+{
+  "name": "node-simple-logger",
+  "version": "0.0.2",
+  "main": "./index.js",
+  "author": "DropZone",
+  "description": "Simple node logger",
+  "contributors": [
+	{
+		"name": "Duarte Madueño",
+		"email": "duarte.madueno@gmail.com"
+	}
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DropZone/node-simple-logger.git"
+  },
+  "keywords": [
+    "logging",
+    "nodeJS",
+    "logger"
+  ],
+  "dependencies": {}
+}
