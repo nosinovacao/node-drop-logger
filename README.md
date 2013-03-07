@@ -3,15 +3,11 @@ node-logger
 
 Simple logging module for NodeJS with colored message level
 
-DEBUG: white
-
-EMERGENCY|CRITICAL|ERROR: red
-
-WARNING: yellow
-
-NOTICE|INFO: cyan
-
-OTHERS: green
+DEBUG: white <br />
+EMERGENCY|CRITICAL|ERROR: red <br />
+WARNING: yellow <br />
+NOTICE|INFO: cyan <br />
+OTHERS: green <br />
 
 Usage:
 ```javascript
