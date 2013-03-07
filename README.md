@@ -1,4 +1,4 @@
-node-logger
+node-simple-logger
 ==============
 
 Simple logging module for NodeJS with colored message level
