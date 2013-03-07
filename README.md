@@ -1,6 +1,8 @@
 node-simple-logger
 ==============
 
+Thanks to (https://github.com/visionmedia/log.js/)
+
 Simple logging module for NodeJS with colored message level
 
 DEBUG: white <br />
