@@ -1,7 +1,13 @@
 node-logger
 ==============
 
-Simple logging module for NodeJS
+Simple logging module for NodeJS with colored message level
+
+DEBUG: white
+EMERGENCY|CRITICAL|ERROR: red
+WARNING: yellow
+NOTICE|INFO: cyan
+OTHERS: green
 
 Usage:
 ```javascript
