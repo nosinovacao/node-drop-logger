@@ -17,7 +17,7 @@ Usage:
 var logger = new loggingModule({
 	useConsole: true,							// boolean: true|false
 	useFile: true,								// boolean: true|false
-	filePath: 'FTPProxy-Logging(%DATE%).log', 	// string
+	filePath: 'Log(%DATE%).log', 			// string
 	level: 'DEBUG'								// [EMERGENCY|ALERT|CRITICAL|ERROR|WARNING|NOTICE|INFO|DEBUG]
 });
 
