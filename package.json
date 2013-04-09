@@ -1,5 +1,5 @@
 {
-  "name": "node-simple-logger",
+  "name": "node-drop-logger",
   "version": "0.0.2",
   "main": "./index.js",
   "author": { 
@@ -14,14 +14,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/DropZone/node-simple-logger.git"
+    "url": "https://github.com/DropZone/node-drop-logger.git"
   },
   "bugs": {
-    "url": "https://github.com/DropZone/node-simple-logger/issues"
+    "url": "https://github.com/DropZone/node-drop-logger/issues"
   },
   "keywords": [
     "logging",
-    "nodeJS",
-    "logger"
+    "nodeJS"
   ]
 }

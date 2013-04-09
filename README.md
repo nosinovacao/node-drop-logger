@@ -1,4 +1,4 @@
-node-simple-logger
+node-drop-logger
 ==============
 
 Thanks to (https://github.com/visionmedia/log.js/)
