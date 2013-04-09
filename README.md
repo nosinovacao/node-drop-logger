@@ -5,6 +5,10 @@ Thanks to (https://github.com/visionmedia/log.js/)
 
 Simple logging module for NodeJS with colored message level
 
+```javascript
+$ npm install node-drop-logger
+```
+
 DEBUG: white <br />
 EMERGENCY|CRITICAL|ERROR: red <br />
 WARNING: yellow <br />
