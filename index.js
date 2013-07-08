@@ -84,7 +84,7 @@ var NodeLogger = function (options) {
                 var levelString = _p.stringRightPad(levelStr, ('EMERGENCY').length, ' ');
                 var fileMsg = '[' + dateStr + ']' + ' ' + levelString + ' ' + msg; 
                 if (_p.useConsole) {
-                    var read = '\u001b[31m', yellow = '\u001b[33m', cyan = '\u001b[36m', magenta = '\u001b[35m', green = '\u001b[32m', reset = '\u001b[0m';
+                    var red = '\u001b[31m', yellow = '\u001b[33m', cyan = '\u001b[36m', magenta = '\u001b[35m', green = '\u001b[32m', reset = '\u001b[0m';
                     switch (levelStr) {
                         case 'ERROR': console.error('[' + dateStr + ']' + ' ' + red + levelString + ' ' + reset + msg); break;
                         case 'WARNING': console.warn('[' + dateStr + ']' + ' ' + yellow + levelString + ' ' + reset + msg); break;
